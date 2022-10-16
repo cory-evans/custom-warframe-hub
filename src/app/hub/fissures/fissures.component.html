@@ -1,0 +1,63 @@
+<h1 class="text-center text-lg font-semibold">Fissures</h1>
+
+<div class="mt-2 flex justify-center items-center space-x-1">
+  <button
+    appButton="primary-outline"
+    [active]="tab == 'normal'"
+    size="sm"
+    (click)="selectTab('normal')"
+  >
+    Fissures
+  </button>
+  <button
+    appButton="primary-outline"
+    [active]="tab == 'voidstorm'"
+    size="sm"
+    (click)="selectTab('voidstorm')"
+  >
+    Void Storm
+  </button>
+  <button
+    appButton="primary-outline"
+    [active]="tab == 'steelpath'"
+    size="sm"
+    (click)="selectTab('steelpath')"
+  >
+    Steel Path
+  </button>
+  <button
+    appButton="primary-outline"
+    [active]="tab == 'all'"
+    size="sm"
+    (click)="selectTab('all')"
+  >
+    All
+  </button>
+</div>
+
+<ul *ngIf="fissures" class="mt-2 flex flex-col space-y-2">
+  <li *ngFor="let f of fissuresFiltered">
+    <div class="flex justify-between">
+      <div class="flex space-x-2 items-center">
+        <img
+          [src]="
+            'https://cdn.warframestat.us/genesis/svg/fissures/' +
+            f.tierNum +
+            '.svg'
+          "
+          [alt]="f.tier"
+          class="w-6 h-6"
+        />
+        <span
+          [ngClass]="{
+            'font-bold':
+              f.missionType == 'Survival' || f.missionType == 'Disruption'
+          }"
+          >{{ f.tier }} | {{ f.missionType }} | {{ f.node }}</span
+        >
+      </div>
+
+      <app-countdown-timer [expires]="f.expiry"></app-countdown-timer>
+    </div>
+  </li>
+</ul>
