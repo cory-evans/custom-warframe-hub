@@ -16,10 +16,14 @@
         [alt]="fissure.tier"
         class="h-12 w-12"
       />
-      <div class="pl-2 flex-1">
-        <div class="flex justify-between">
-          <div>{{ fissure.tier }} - {{ fissure.missionType }}</div>
-          <div>{{ fissure.node }}</div>
+      <div class="pl-2 flex-1 overflow-hidden">
+        <div class="flex justify-between space-x-4">
+          <div class="whitespace-nowrap overflow-hidden">
+            {{ fissure.tier }} - {{ fissure.missionType }}
+          </div>
+          <div class="whitespace-nowrap overflow-hidden">
+            {{ fissure.node }}
+          </div>
         </div>
 
         <div class="flex justify-between">
