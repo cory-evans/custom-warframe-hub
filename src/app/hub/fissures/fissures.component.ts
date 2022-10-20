@@ -30,12 +30,8 @@ export class FissuresComponent implements OnInit {
         return this.fissures;
     }
   }
-  constructor(private settingsService: SettingsService) {
+  constructor() {
     this.tab = localStorage.getItem('fissureView') || 'all';
-  }
-
-  get missionTypes() {
-    return this.settingsService.settings.highlightedFissures;
   }
 
   ngOnInit(): void {}

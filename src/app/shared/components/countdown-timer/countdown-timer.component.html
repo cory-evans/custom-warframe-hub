@@ -1,1 +1,5 @@
-<span [class]="class + ' text-white rounded-sm px-1'">{{ text }}</span>
+<span
+  [ngClass]="class"
+  class="text-white rounded-sm px-1 bg-opacity-80 backdrop-blur-sm"
+  >{{ text }}</span
+>

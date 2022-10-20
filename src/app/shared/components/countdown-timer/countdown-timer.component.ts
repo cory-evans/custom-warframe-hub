@@ -10,7 +10,7 @@ import { Subscription, timer } from 'rxjs';
 const VARIANTS = {
   expired: 'bg-blue-600',
   short: 'bg-red-600',
-  medium: 'bg-yellow-700',
+  medium: 'bg-yellow-600',
   long: 'bg-green-700',
 };
 
@@ -80,7 +80,7 @@ export class CountdownTimerComponent implements OnInit, OnDestroy {
     const hours = Math.floor((this.secondsRemaining / (60 * 60)) % 24);
 
     var t = `${this.padNumber(seconds)}s`;
-    if (minutes) t = `${this.padNumber(minutes)}m ${t}`;
+    if (minutes || hours) t = `${this.padNumber(minutes)}m ${t}`;
 
     if (hours) t = `${hours}h ${t}`;
 

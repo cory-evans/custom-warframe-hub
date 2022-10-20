@@ -4,9 +4,10 @@ import { HubComponent } from './hub/hub.component';
 import { HubRoutingModule } from './hub-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { FissuresComponent } from './fissures/fissures.component';
+import { SingleFissureComponent } from './fissures/single-fissure.component';
 
 @NgModule({
-  declarations: [HubComponent, FissuresComponent],
+  declarations: [HubComponent, FissuresComponent, SingleFissureComponent],
   imports: [CommonModule, HubRoutingModule, SharedModule],
 })
 export class HubModule {}

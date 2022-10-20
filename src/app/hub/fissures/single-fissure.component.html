@@ -1,0 +1,32 @@
+<ng-container *ngIf="fissure">
+  <div
+    class="bg-slate-200/25 p-2 backdrop-blur border rounded shadow-sm"
+    [ngClass]="{
+      'bg-blue-500/10': missionTypes.indexOf(fissure.missionType) >= 0,
+      'border-blue-500': missionTypes.indexOf(fissure.missionType) >= 0
+    }"
+  >
+    <div class="flex items-center">
+      <img
+        [src]="
+          'https://cdn.warframestat.us/genesis/svg/fissures/' +
+          fissure.tierNum +
+          '.svg'
+        "
+        [alt]="fissure.tier"
+        class="h-12 w-12"
+      />
+      <div class="pl-2 flex-1">
+        <div class="flex justify-between">
+          <div>{{ fissure.tier }} - {{ fissure.missionType }}</div>
+          <div>{{ fissure.node }}</div>
+        </div>
+
+        <div class="flex justify-between">
+          <div>{{ fissure.enemy }}</div>
+          <app-countdown-timer [expires]="fissure.expiry"></app-countdown-timer>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
