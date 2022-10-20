@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { SettingsService } from 'src/app/shared/services/settings.service';
 
 @Component({
   selector: 'hub-fissures',
@@ -29,8 +30,12 @@ export class FissuresComponent implements OnInit {
         return this.fissures;
     }
   }
-  constructor() {
+  constructor(private settingsService: SettingsService) {
     this.tab = localStorage.getItem('fissureView') || 'all';
+  }
+
+  get missionTypes() {
+    return this.settingsService.settings.highlightedFissures;
   }
 
   ngOnInit(): void {}

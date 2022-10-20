@@ -1,0 +1,53 @@
+<div class="max-w-2xl mx-auto h-full py-8">
+  <div class="grid grid-cols-3 gap-2 h-full max-h-[600px]">
+    <div appCard>
+      <ul class="flex flex-col">
+        <li
+          role="button"
+          (click)="setTab('fissure')"
+          class="rounded px-2 py-1 hover:shadow-sm hover:bg-slate-200 transition-colors"
+        >
+          Fissures
+        </li>
+      </ul>
+    </div>
+
+    <div appCard class="col-span-2 flex flex-col">
+      <div class="flex-1">
+        <div *ngIf="tab == 'fissure'">
+          <div>
+            <label for="highlightedFissures">Highlighted Fissures</label>
+            <ng-select
+              [items]="missionTypes"
+              [multiple]="true"
+              bindLabel="name"
+              bindValue="name"
+              [closeOnSelect]="false"
+              [(ngModel)]="settings.highlightedFissures"
+            >
+              <ng-template
+                ng-option-tmp
+                let-item="item"
+                let-item$="item$"
+                let-index="index"
+              >
+                <input
+                  id="item-{{ index }}"
+                  type="checkbox"
+                  [ngModel]="item$.selected"
+                />
+                {{ item.name }}
+              </ng-template></ng-select
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-end">
+        <button appButton="primary" (click)="settingsService.save()">
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

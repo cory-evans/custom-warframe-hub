@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { WarframeApiService } from 'src/app/shared/services/warframe-api.service';
 
@@ -6,7 +6,7 @@ import { WarframeApiService } from 'src/app/shared/services/warframe-api.service
   selector: 'app-hub',
   templateUrl: './hub.component.html',
 })
-export class HubComponent implements OnInit {
+export class HubComponent implements OnInit, OnDestroy {
   worldState?: WarframeApi.WorldState;
   worldStateSubscription?: Subscription;
 
@@ -18,5 +18,9 @@ export class HubComponent implements OnInit {
       .subscribe((state) => {
         this.worldState = state;
       });
+  }
+
+  ngOnDestroy(): void {
+    this.worldStateSubscription?.unsubscribe();
   }
 }

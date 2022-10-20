@@ -50,10 +50,10 @@
         />
         <span
           [ngClass]="{
-            'font-bold':
-              f.missionType == 'Survival' || f.missionType == 'Disruption'
+            'font-bold': missionTypes.indexOf(f.missionType) >= 0
           }"
-          >{{ f.tier }} | {{ f.missionType }} | {{ f.node }}</span
+          >{{ f.tier }} | {{ f.missionType }} | {{ f.node }} |
+          {{ f.enemy }}</span
         >
       </div>
 
