@@ -1,0 +1,20 @@
+on:
+  push:
+    branches:
+      - master
+
+name: deploy
+jobs:
+  deploy:
+    if: "contains(github.event.head_commit.message, 'chore(master): release')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: All things angular
+        uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.2
+        with:
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+          build_configuration: production
+          base_href: /custom-warframe-hub/
+          deploy_branch: gh-pages
+          angular_dist_build_folder: dist/warframe-hub
