@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/cory-evans/custom-warframe-hub/compare/v1.1.0...v1.1.1) (2022-10-21)
+
+
+### Bug Fixes
+
+* only deploy on release ([c1c60cc](https://github.com/cory-evans/custom-warframe-hub/commit/c1c60ccd64ff85c4b85ec4db6214a64ccb8ab26e))
+
 ## [1.1.0](https://github.com/cory-evans/custom-warframe-hub/compare/v1.0.0...v1.1.0) (2022-10-21)
 
 
