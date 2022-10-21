@@ -1,3 +1,12 @@
-<div class="max-w-4xl mx-auto py-4">
-  <hub-fissures appCard [fissures]="worldState?.fissures"></hub-fissures>
+<div class="p-4 grid grid-cols-3 gap-4">
+  <hub-fissures
+    class="col-span-2 row-span-4"
+    appCard
+    [fissures]="worldState?.fissures"
+  ></hub-fissures>
+
+  <hub-void-trader
+    appCard
+    [voidTrader]="worldState?.voidTrader"
+  ></hub-void-trader>
 </div>

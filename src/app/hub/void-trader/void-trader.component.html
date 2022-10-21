@@ -1,0 +1,12 @@
+<h1 class="text-center text-lg font-semibold">Void Trader</h1>
+
+<ng-container *ngIf="voidTrader">
+  <div class="flex justify-between">
+    <span
+      >Arrives at <strong>{{ voidTrader.location }}</strong></span
+    >
+    <app-countdown-timer
+      [expires]="voidTrader.activation"
+    ></app-countdown-timer>
+  </div>
+</ng-container>
