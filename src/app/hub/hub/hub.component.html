@@ -1,12 +1,12 @@
 <div class="p-4 grid grid-cols-3 gap-4">
-  <hub-fissures
-    class="col-span-2 row-span-4"
-    appCard
-    [fissures]="worldState?.fissures"
-  ></hub-fissures>
+  <div class="col-span-2">
+    <hub-fissures appCard [fissures]="worldState?.fissures"></hub-fissures>
+  </div>
 
-  <hub-void-trader
-    appCard
-    [voidTrader]="worldState?.voidTrader"
-  ></hub-void-trader>
+  <div>
+    <hub-void-trader
+      appCard
+      [voidTrader]="worldState?.voidTrader"
+    ></hub-void-trader>
+  </div>
 </div>
