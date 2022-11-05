@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/cory-evans/custom-warframe-hub/compare/v1.1.1...v1.2.0) (2022-11-05)
+
+
+### Features
+
+* show void trader inventory ([051128c](https://github.com/cory-evans/custom-warframe-hub/commit/051128c9c543e16cc596c3a0e8ab22fb4f46676c))
+
 ## [1.1.1](https://github.com/cory-evans/custom-warframe-hub/compare/v1.1.0...v1.1.1) (2022-10-21)
 
 
