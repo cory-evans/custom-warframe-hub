@@ -78,11 +78,14 @@ export class CountdownTimerComponent implements OnInit, OnDestroy {
     const seconds = Math.floor(this.secondsRemaining % 60);
     const minutes = Math.floor((this.secondsRemaining / 60) % 60);
     const hours = Math.floor((this.secondsRemaining / (60 * 60)) % 24);
+    const days = Math.floor((this.secondsRemaining / (60 * 60 * 24)));
 
     var t = `${this.padNumber(seconds)}s`;
     if (minutes || hours) t = `${this.padNumber(minutes)}m ${t}`;
 
     if (hours) t = `${hours}h ${t}`;
+
+    if (days) t = `${days}d ${t}`
 
     this.text = t;
   }

@@ -18,7 +18,7 @@ export class WarframeApiService {
   worldState(intervalSeconds: number = 60) {
     return timer(0, intervalSeconds * 1000).pipe(
       concatMap((x) => {
-        return this.get<WarframeApi.WorldState>('pc');
+        return this.get<WarframeApi.WorldState>('pc/');
       })
     );
   }
