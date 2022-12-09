@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/cory-evans/custom-warframe-hub/compare/v1.2.0...v1.2.1) (2022-12-09)
+
+
+### Bug Fixes
+
+* add days to countdown timer ([6ef7eb8](https://github.com/cory-evans/custom-warframe-hub/commit/6ef7eb8ad07729ca63b2ed4568c1fb966baf2b03))
+
 ## [1.2.0](https://github.com/cory-evans/custom-warframe-hub/compare/v1.1.1...v1.2.0) (2022-11-05)
 
 
