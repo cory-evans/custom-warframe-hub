@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.2](https://github.com/cory-evans/custom-warframe-hub/compare/v1.2.1...v1.2.2) (2024-02-22)
+
+
+### Bug Fixes
+
+* fissure image url ([c036606](https://github.com/cory-evans/custom-warframe-hub/commit/c036606f5cc2f09799707de674685ea1b2489827))
+
 ## [1.2.1](https://github.com/cory-evans/custom-warframe-hub/compare/v1.2.0...v1.2.1) (2022-12-09)
 
 
