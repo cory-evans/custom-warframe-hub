@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.3](https://github.com/cory-evans/custom-warframe-hub/compare/v1.2.2...v1.2.3) (2024-03-09)
+
+
+### Bug Fixes
+
+* update to use signals and sort void trader inventory ([c35b61f](https://github.com/cory-evans/custom-warframe-hub/commit/c35b61fffe3188195ebf7b726e773281d1e09c55))
+
 ## [1.2.2](https://github.com/cory-evans/custom-warframe-hub/compare/v1.2.1...v1.2.2) (2024-02-22)
 
 
