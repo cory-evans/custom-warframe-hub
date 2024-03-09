@@ -90,10 +90,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "warframe-hub:build:production"
+              "buildTarget": "warframe-hub:build:production"
             },
             "development": {
-              "browserTarget": "warframe-hub:build:development"
+              "buildTarget": "warframe-hub:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -101,7 +101,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "warframe-hub:build"
+            "buildTarget": "warframe-hub:build"
           }
         },
         "test": {
