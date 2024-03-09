@@ -28,7 +28,7 @@
       <tr *ngFor="let item of voidTrader.inventory" class="">
         <td class="">{{ item.item }}</td>
         <td class="text-right">{{ item.ducats }}</td>
-        <td class="text-right">{{ item.credits.toLocaleString() }}</td>
+        <td class="text-right">{{ item.credits | number }}</td>
       </tr>
     </tbody>
   </table>

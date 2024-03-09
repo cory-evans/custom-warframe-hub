@@ -1,17 +1,43 @@
 declare namespace WarframeApi {
-  export interface CountedItem {
-    count: number;
-    type: string;
+  export interface WorldState {
+    timestamp: string;
+    alerts: Alert[];
+    arbitration: Arbitration;
+    archonHunt: ArchonHunt;
+    cambionCycle: CambionCycle;
+    cetusCycle: CetusCycle;
+    conclaveChallenges: ConclaveChallenge[];
+    constructionProgress: ConstructionProgress;
+    dailyDeals: DailyDeal[];
+    darkSectors: DarkSector[];
+    earthCycle: EarthCycle;
+    events: Event[];
+    fissures: Fissure[];
+    flashSales: FlashSale[];
+    globalUpgrades: GlobalUpgrade[];
+    invasions: Invasion[];
+    kuva: Kuva[];
+    news: News[];
+    nightwave: Nightwave;
+    persistentEnemies: PersistentEnemy[];
+    simaris: Simaris;
+    sortie: Sortie;
+    steelPath: SteelPath;
+    syndicateMissions: SyndicateMission[];
+    vallisCycle: VallisCycle;
+    voidTrader: VoidTrader;
   }
 
-  export interface Reward {
-    countedItems: CountedItem[];
-    thumbnail: string;
-    color: number;
-    credits: number;
-    asString: string;
-    items: string[];
-    itemString: string;
+  export interface Alert {
+    id: string;
+    activation: string;
+    expiry: string;
+    startString: string;
+    active: boolean;
+    mission: Mission;
+    expired: boolean;
+    eta: string;
+    rewardTypes: string[];
   }
 
   export interface Mission {
@@ -38,22 +64,25 @@ declare namespace WarframeApi {
     description: string;
   }
 
-  export interface Alert {
-    id: string;
-    activation: Date;
-    expiry: Date;
-    startString: string;
-    active: boolean;
-    mission: Mission;
-    expired: boolean;
-    eta: string;
-    rewardTypes: string[];
+  export interface Reward {
+    countedItems: CountedItem[];
+    thumbnail: string;
+    color: number;
+    credits: number;
+    asString: string;
+    items: string[];
+    itemString: string;
+  }
+
+  export interface CountedItem {
+    count: number;
+    type: string;
   }
 
   export interface Arbitration {
     id: string;
-    activation: Date;
-    expiry: Date;
+    activation: string;
+    expiry: string;
     startString: string;
     active: boolean;
     node: string;
@@ -65,19 +94,19 @@ declare namespace WarframeApi {
     sharkwing: boolean;
   }
 
-  export interface CountedItem2 {
-    count: number;
-    type: string;
-  }
-
-  export interface Reward2 {
-    countedItems: CountedItem2[];
-    thumbnail: string;
-    color: number;
-    credits: number;
-    asString: string;
-    items: string[];
-    itemString: string;
+  export interface ArchonHunt {
+    id: string;
+    activation: string;
+    expiry: string;
+    startString: string;
+    active: boolean;
+    rewardPool: string;
+    missions: Mission2[];
+    boss: string;
+    faction: string;
+    factionKey: string;
+    expired: boolean;
+    eta: string;
   }
 
   export interface Mission2 {
@@ -104,33 +133,34 @@ declare namespace WarframeApi {
     description: string;
   }
 
-  export interface ArchonHunt {
-    id: string;
-    activation: Date;
-    expiry: Date;
-    startString: string;
-    active: boolean;
-    rewardPool: string;
-    missions: Mission2[];
-    boss: string;
-    faction: string;
-    factionKey: string;
-    expired: boolean;
-    eta: string;
+  export interface Reward2 {
+    countedItems: CountedItem2[];
+    thumbnail: string;
+    color: number;
+    credits: number;
+    asString: string;
+    items: string[];
+    itemString: string;
+  }
+
+  export interface CountedItem2 {
+    count: number;
+    type: string;
   }
 
   export interface CambionCycle {
     id: string;
     expiry: string;
     activation: string;
+    state: string;
     active: string;
     timeLeft: string;
   }
 
   export interface CetusCycle {
     id: string;
-    activation: Date;
-    expiry: Date;
+    activation: string;
+    expiry: string;
     startString: string;
     active: boolean;
     isDay: boolean;
@@ -165,6 +195,7 @@ declare namespace WarframeApi {
   export interface DailyDeal {
     sold: number;
     item: string;
+    uniqueName: string;
     total: number;
     eta: string;
     originalPrice: number;
@@ -172,15 +203,6 @@ declare namespace WarframeApi {
     discount: number;
     expiry: string;
     id: string;
-  }
-
-  export interface History {
-    defender: string;
-    defenderIsAlliance: boolean;
-    attacker: string;
-    winner: string;
-    start: string;
-    end: string;
   }
 
   export interface DarkSector {
@@ -194,87 +216,29 @@ declare namespace WarframeApi {
     history: History[];
   }
 
+  export interface History {
+    defender: string;
+    defenderIsAlliance: boolean;
+    attacker: string;
+    winner: string;
+    start: string;
+    end: string;
+  }
+
   export interface EarthCycle {
     id: string;
-    activation: Date;
-    expiry: Date;
+    activation: string;
+    expiry: string;
     startString: string;
     active: boolean;
     isDay: boolean;
     timeLeft: string;
   }
 
-  export interface CountedItem3 {
-    count: number;
-    type: string;
-  }
-
-  export interface Reward3 {
-    countedItems: CountedItem3[];
-    thumbnail: string;
-    color: number;
-    credits: number;
-    asString: string;
-    items: string[];
-    itemString: string;
-  }
-
-  export interface Job {
-    activation: Date;
-    expiry: Date;
-    rewardPool: string[];
-    type: string;
-    enemyLevels: number[];
-    standingStages: number[];
-    minMR: number;
-  }
-
-  export interface CountedItem4 {
-    count: number;
-    type: string;
-  }
-
-  export interface Reward4 {
-    countedItems: CountedItem4[];
-    thumbnail: string;
-    color: number;
-    credits: number;
-    asString: string;
-    items: string[];
-    itemString: string;
-  }
-
-  export interface Message {
-    sender: string;
-    subject: string;
-    message: string;
-    senderIcon: string;
-    attachments: string[];
-  }
-
-  export interface InterimStep {
-    goal: number;
-    reward: Reward4;
-    message: Message;
-    winnerCount: number;
-  }
-
-  export interface ProgressStep {
-    type: string;
-    progressAmt: number;
-  }
-
-  export interface Metadata {}
-
-  export interface NextAlt {
-    expiry: Date;
-    activation: Date;
-  }
-
   export interface Event {
     id: string;
-    activation: Date;
-    expiry: Date;
+    activation: string;
+    expiry: string;
     startString: string;
     active: boolean;
     maximumScore: number;
@@ -304,15 +268,82 @@ declare namespace WarframeApi {
     metadata: Metadata;
     completionBonuses: number[];
     scoreVar: string;
-    altExpiry: Date;
-    altActivation: Date;
+    altExpiry: string;
+    altActivation: string;
     nextAlt: NextAlt;
+  }
+
+  export interface Reward3 {
+    countedItems: CountedItem3[];
+    thumbnail: string;
+    color: number;
+    credits: number;
+    asString: string;
+    items: string[];
+    itemString: string;
+  }
+
+  export interface CountedItem3 {
+    count: number;
+    type: string;
+  }
+
+  export interface Job {
+    activation: string;
+    expiry: string;
+    rewardPool: string[];
+    type: string;
+    enemyLevels: number[];
+    standingStages: number[];
+    minMR: number;
+  }
+
+  export interface InterimStep {
+    goal: number;
+    reward: Reward4;
+    message: Message;
+    winnerCount: number;
+  }
+
+  export interface Reward4 {
+    countedItems: CountedItem4[];
+    thumbnail: string;
+    color: number;
+    credits: number;
+    asString: string;
+    items: string[];
+    itemString: string;
+  }
+
+  export interface CountedItem4 {
+    count: number;
+    type: string;
+  }
+
+  export interface Message {
+    sender: string;
+    subject: string;
+    message: string;
+    senderIcon: string;
+    attachments: string[];
+  }
+
+  export interface ProgressStep {
+    type: string;
+    progressAmt: number;
+  }
+
+  export interface Metadata {}
+
+  export interface NextAlt {
+    expiry: string;
+    activation: string;
   }
 
   export interface Fissure {
     id: string;
-    activation: Date;
-    expiry: Date;
+    activation: string;
+    expiry: string;
     startString: string;
     active: boolean;
     node: string;
@@ -350,82 +381,10 @@ declare namespace WarframeApi {
     desc: string;
   }
 
-  export interface CountedItem5 {
-    count: number;
-    type: string;
-  }
-
-  export interface Reward5 {
-    countedItems: CountedItem5[];
-    thumbnail: string;
-    color: number;
-    credits: number;
-    asString: string;
-    items: string[];
-    itemString: string;
-  }
-
-  export interface Attacker {
-    reward: Reward5;
-    faction: string;
-    factionKey: string;
-  }
-
-  export interface CountedItem6 {
-    count: number;
-    type: string;
-  }
-
-  export interface AttackerReward {
-    countedItems: CountedItem6[];
-    thumbnail: string;
-    color: number;
-    credits: number;
-    asString: string;
-    items: string[];
-    itemString: string;
-  }
-
-  export interface CountedItem7 {
-    count: number;
-    type: string;
-  }
-
-  export interface Reward6 {
-    countedItems: CountedItem7[];
-    thumbnail: string;
-    color: number;
-    credits: number;
-    asString: string;
-    items: string[];
-    itemString: string;
-  }
-
-  export interface Defender {
-    reward: Reward6;
-    faction: string;
-    factionKey: string;
-  }
-
-  export interface CountedItem8 {
-    count: number;
-    type: string;
-  }
-
-  export interface DefenderReward {
-    countedItems: CountedItem8[];
-    thumbnail: string;
-    color: number;
-    credits: number;
-    asString: string;
-    items: string[];
-    itemString: string;
-  }
-
   export interface Invasion {
     id: string;
-    activation: Date;
-    expiry: Date;
+    activation: string;
+    expiry: string;
     startString: string;
     active: boolean;
     attacker: Attacker;
@@ -446,10 +405,82 @@ declare namespace WarframeApi {
     vsInfestation: boolean;
   }
 
+  export interface Attacker {
+    reward: Reward5;
+    faction: string;
+    factionKey: string;
+  }
+
+  export interface Reward5 {
+    countedItems: CountedItem5[];
+    thumbnail: string;
+    color: number;
+    credits: number;
+    asString: string;
+    items: string[];
+    itemString: string;
+  }
+
+  export interface CountedItem5 {
+    count: number;
+    type: string;
+  }
+
+  export interface AttackerReward {
+    countedItems: CountedItem6[];
+    thumbnail: string;
+    color: number;
+    credits: number;
+    asString: string;
+    items: string[];
+    itemString: string;
+  }
+
+  export interface CountedItem6 {
+    count: number;
+    type: string;
+  }
+
+  export interface Defender {
+    reward: Reward6;
+    faction: string;
+    factionKey: string;
+  }
+
+  export interface Reward6 {
+    countedItems: CountedItem7[];
+    thumbnail: string;
+    color: number;
+    credits: number;
+    asString: string;
+    items: string[];
+    itemString: string;
+  }
+
+  export interface CountedItem7 {
+    count: number;
+    type: string;
+  }
+
+  export interface DefenderReward {
+    countedItems: CountedItem8[];
+    thumbnail: string;
+    color: number;
+    credits: number;
+    asString: string;
+    items: string[];
+    itemString: string;
+  }
+
+  export interface CountedItem8 {
+    count: number;
+    type: string;
+  }
+
   export interface Kuva {
     id: string;
-    activation: Date;
-    expiry: Date;
+    activation: string;
+    expiry: string;
     startString: string;
     active: boolean;
     node: string;
@@ -459,10 +490,6 @@ declare namespace WarframeApi {
     typeKey: string;
     archwing: boolean;
     sharkwing: boolean;
-  }
-
-  export interface Translations {
-    es: string;
   }
 
   export interface News {
@@ -480,12 +507,31 @@ declare namespace WarframeApi {
     priority: boolean;
   }
 
+  export interface Translations {
+    es: string;
+  }
+
+  export interface Nightwave {
+    id: string;
+    activation: string;
+    expiry: string;
+    startString: string;
+    active: boolean;
+    params: Params;
+    rewardTypes: string[];
+    season: number;
+    tag: string;
+    phase: number;
+    possibleChallenges: PossibleChallenge[];
+    activeChallenges: ActiveChallenge[];
+  }
+
   export interface Params {}
 
   export interface PossibleChallenge {
     id: string;
-    activation: Date;
-    expiry: Date;
+    activation: string;
+    expiry: string;
     startString: string;
     active: boolean;
     isDaily: boolean;
@@ -497,8 +543,8 @@ declare namespace WarframeApi {
 
   export interface ActiveChallenge {
     id: string;
-    activation: Date;
-    expiry: Date;
+    activation: string;
+    expiry: string;
     startString: string;
     active: boolean;
     isDaily: boolean;
@@ -506,21 +552,6 @@ declare namespace WarframeApi {
     title: string;
     desc: string;
     reputation: number;
-  }
-
-  export interface Nightwave {
-    id: string;
-    activation: Date;
-    expiry: Date;
-    startString: string;
-    active: boolean;
-    params: Params;
-    rewardTypes: string[];
-    season: number;
-    tag: string;
-    phase: number;
-    possibleChallenges: PossibleChallenge[];
-    activeChallenges: ActiveChallenge[];
   }
 
   export interface PersistentEnemy {
@@ -543,19 +574,10 @@ declare namespace WarframeApi {
     asString: string;
   }
 
-  export interface Variant {
-    node: string;
-    boss: string;
-    missionType: string;
-    planet: string;
-    modifier: string;
-    modifierDescription: string;
-  }
-
   export interface Sortie {
     id: string;
-    activation: Date;
-    expiry: Date;
+    activation: string;
+    expiry: string;
     startString: string;
     active: boolean;
     rewardPool: string;
@@ -565,6 +587,25 @@ declare namespace WarframeApi {
     factionKey: string;
     expired: boolean;
     eta: string;
+  }
+
+  export interface Variant {
+    node: string;
+    boss: string;
+    missionType: string;
+    planet: string;
+    modifier: string;
+    modifierDescription: string;
+  }
+
+  export interface SteelPath {
+    activation: string;
+    expiry: string;
+    currentReward: CurrentReward;
+    remaining: string;
+    rotation: Rotation[];
+    evergreens: Evergreen[];
+    incursions: Incursions;
   }
 
   export interface CurrentReward {
@@ -584,30 +625,10 @@ declare namespace WarframeApi {
 
   export interface Incursions {
     id: string;
-    activation: Date;
-    expiry: Date;
+    activation: string;
+    expiry: string;
     startString: string;
     active: boolean;
-  }
-
-  export interface SteelPath {
-    activation: Date;
-    expiry: Date;
-    currentReward: CurrentReward;
-    remaining: string;
-    rotation: Rotation[];
-    evergreens: Evergreen[];
-    incursions: Incursions;
-  }
-
-  export interface Job2 {
-    activation: Date;
-    expiry: Date;
-    rewardPool: string[];
-    type: string;
-    enemyLevels: number[];
-    standingStages: number[];
-    minMR: number;
   }
 
   export interface SyndicateMission {
@@ -616,8 +637,18 @@ declare namespace WarframeApi {
     jobs: Job2[];
     syndicate: string;
     id: string;
-    expiry: Date;
-    activation: Date;
+    expiry: string;
+    activation: string;
+  }
+
+  export interface Job2 {
+    activation: string;
+    expiry: string;
+    rewardPool: string[];
+    type: string;
+    enemyLevels: number[];
+    standingStages: number[];
+    minMR: number;
   }
 
   export interface VallisCycle {
@@ -627,16 +658,10 @@ declare namespace WarframeApi {
     isWarm: boolean;
   }
 
-  export interface Inventory {
-    item: string;
-    ducats: number;
-    credits: number;
-  }
-
   export interface VoidTrader {
     id: string;
-    activation: Date;
-    expiry: Date;
+    activation: string;
+    expiry: string;
     startString: string;
     active: boolean;
     character: string;
@@ -646,32 +671,9 @@ declare namespace WarframeApi {
     endString: string;
   }
 
-  export interface WorldState {
-    timestamp: string;
-    alerts: Alert[];
-    arbitration: Arbitration;
-    archonHunt: ArchonHunt;
-    cambionCycle: CambionCycle;
-    cetusCycle: CetusCycle;
-    conclaveChallenges: ConclaveChallenge[];
-    constructionProgress: ConstructionProgress;
-    dailyDeals: DailyDeal[];
-    darkSectors: DarkSector[];
-    earthCycle: EarthCycle;
-    events: Event[];
-    fissures: Fissure[];
-    flashSales: FlashSale[];
-    globalUpgrades: GlobalUpgrade[];
-    invasions: Invasion[];
-    kuva: Kuva[];
-    news: News[];
-    nightwave: Nightwave;
-    persistentEnemies: PersistentEnemy[];
-    simaris: Simaris;
-    sortie: Sortie;
-    steelPath: SteelPath;
-    syndicateMissions: SyndicateMission[];
-    vallisCycle: VallisCycle;
-    voidTrader: VoidTrader;
+  export interface Inventory {
+    item: string;
+    ducats: number;
+    credits: number;
   }
 }
