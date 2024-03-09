@@ -1,43 +1,45 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { SettingsService } from 'src/app/shared/services/settings.service';
+import { Component, Signal, computed, input, signal } from '@angular/core';
+
+type FissureTab = 'normal' | 'steelpath' | 'voidstorm' | 'all';
 
 @Component({
   selector: 'hub-fissures',
   templateUrl: './fissures.component.html',
 })
-export class FissuresComponent implements OnInit {
-  @Input() fissures?: WarframeApi.Fissure[];
+export class FissuresComponent {
+  fissures = input.required<WarframeApi.Fissure[]>();
 
-  tab: string;
+  tab = signal<FissureTab>('all');
 
-  get fissuresFiltered() {
-    if (!this.fissures) return [];
+  fissuresFiltered = computed(() => {
+    const fissures = this.fissures();
 
-    this.fissures.sort((a, b) => {
+    fissures.sort((a, b) => {
       return a.tierNum - b.tierNum;
     });
 
-    switch (this.tab) {
+    switch (this.tab()) {
       case 'normal':
-        return this.fissures.filter(
-          (x) => x.isHard == false && x.isStorm == false
-        );
+        return fissures.filter((x) => x.isHard == false && x.isStorm == false);
       case 'steelpath':
-        return this.fissures.filter((x) => x.isHard == true);
+        return fissures.filter((x) => x.isHard == true);
       case 'voidstorm':
-        return this.fissures.filter((x) => x.isStorm == true);
+        return fissures.filter((x) => x.isStorm == true);
       default:
-        return this.fissures;
+        return fissures;
+    }
+  });
+  constructor() {
+    const t = localStorage.getItem('fissureView');
+    if (t) {
+      this.tab.set(t as FissureTab);
+    } else {
+      this.tab.set('all');
     }
   }
-  constructor() {
-    this.tab = localStorage.getItem('fissureView') || 'all';
-  }
 
-  ngOnInit(): void {}
-
-  selectTab(t: string) {
+  selectTab(t: FissureTab) {
     localStorage.setItem('fissureView', t);
-    this.tab = t;
+    this.tab.set(t);
   }
 }

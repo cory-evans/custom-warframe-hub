@@ -1,12 +1,15 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
 
 @Component({
   selector: 'hub-void-trader',
   templateUrl: './void-trader.component.html',
 })
-export class VoidTraderComponent implements OnInit {
-  @Input() voidTrader?: WarframeApi.VoidTrader;
-  constructor() {}
+export class VoidTraderComponent {
+  voidTrader = input.required<WarframeApi.VoidTrader>();
 
-  ngOnInit(): void {}
+  inventory = computed(() => {
+    const vt = this.voidTrader();
+
+    return vt.inventory.sort((a, b) => a.item.localeCompare(b.item));
+  });
 }

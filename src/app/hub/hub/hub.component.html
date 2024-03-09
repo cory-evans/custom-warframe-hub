@@ -1,12 +1,17 @@
+@if (worldState$ | async; as worldState) {
 <div class="p-4 grid grid-cols-3 gap-4">
   <div class="col-span-2">
-    <hub-fissures appCard [fissures]="worldState?.fissures"></hub-fissures>
+    <hub-fissures appCard [fissures]="worldState.fissures"></hub-fissures>
   </div>
 
   <div>
     <hub-void-trader
       appCard
-      [voidTrader]="worldState?.voidTrader"
+      [voidTrader]="worldState.voidTrader"
     ></hub-void-trader>
   </div>
 </div>
+} @else {
+
+<ng-template #loading> </ng-template>
+}
