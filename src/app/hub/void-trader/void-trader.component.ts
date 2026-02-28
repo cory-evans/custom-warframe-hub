@@ -1,8 +1,9 @@
 import { Component, computed, input } from '@angular/core';
 
 @Component({
-  selector: 'hub-void-trader',
-  templateUrl: './void-trader.component.html',
+    selector: 'hub-void-trader',
+    templateUrl: './void-trader.component.html',
+    standalone: false
 })
 export class VoidTraderComponent {
   voidTrader = input.required<WarframeApi.VoidTrader>();

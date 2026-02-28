@@ -15,8 +15,9 @@ const VARIANTS = {
 };
 
 @Component({
-  selector: 'app-countdown-timer',
-  templateUrl: './countdown-timer.component.html',
+    selector: 'app-countdown-timer',
+    templateUrl: './countdown-timer.component.html',
+    standalone: false
 })
 export class CountdownTimerComponent implements OnInit, OnDestroy {
   @Input() expires?: string | Date;

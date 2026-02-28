@@ -1,10 +1,11 @@
 import { Directive, ElementRef, Renderer2 } from '@angular/core';
 
 @Directive({
-  selector: '[appCard]',
+    selector: '[appCard]',
+    standalone: false
 })
 export class CardDirective {
-  class = 'block bg-white p-4 rounded shadow';
+  class = 'block bg-white p-4 rounded-sm shadow-sm';
 
   constructor(elementRef: ElementRef, renderer: Renderer2) {
     this.class.split(' ').forEach((cls) => {
