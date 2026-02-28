@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, interval, map, take, concatMap, timer } from 'rxjs';
+import { concatMap, timer } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -19,7 +19,7 @@ export class WarframeApiService {
     return timer(0, intervalSeconds * 1000).pipe(
       concatMap((x) => {
         return this.get<WarframeApi.WorldState>('pc/');
-      })
+      }),
     );
   }
 }
