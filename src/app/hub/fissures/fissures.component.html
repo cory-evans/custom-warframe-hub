@@ -39,7 +39,7 @@
   <ul
     class="mt-2 max-h-105 overflow-y-auto grid gap-2 sm:grid-cols-2 grid-cols-1"
   >
-    @for (f of fissuresFiltered(); track f) {
+    @for (f of fissuresFiltered(); track f.id) {
       <li>
         <fissure-card [fissure]="f"></fissure-card>
       </li>
