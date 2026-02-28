@@ -3,8 +3,9 @@ import { Component, Signal, computed, input, signal } from '@angular/core';
 type FissureTab = 'normal' | 'steelpath' | 'voidstorm' | 'all';
 
 @Component({
-  selector: 'hub-fissures',
-  templateUrl: './fissures.component.html',
+    selector: 'hub-fissures',
+    templateUrl: './fissures.component.html',
+    standalone: false
 })
 export class FissuresComponent {
   fissures = input.required<WarframeApi.Fissure[]>();

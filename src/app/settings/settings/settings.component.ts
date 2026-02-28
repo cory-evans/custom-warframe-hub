@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { SettingsService } from 'src/app/shared/services/settings.service';
 
 @Component({
-  selector: 'app-settings',
-  templateUrl: './settings.component.html',
-  host: {
-    class: 'flex-1',
-  },
+    selector: 'app-settings',
+    templateUrl: './settings.component.html',
+    host: {
+        class: 'flex-1',
+    },
+    standalone: false
 })
 export class SettingsComponent implements OnInit {
   tab: string = 'fissure';

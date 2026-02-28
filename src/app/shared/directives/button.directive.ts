@@ -20,7 +20,8 @@ const VARIANTS_SIZING: { [key: string]: string } = {
 };
 
 @Directive({
-  selector: '[appButton]',
+    selector: '[appButton]',
+    standalone: false
 })
 export class ButtonDirective {
   @Input() appButton: keyof typeof VARIANTS_INACTIVE = 'primary';

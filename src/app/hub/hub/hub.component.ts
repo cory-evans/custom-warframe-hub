@@ -3,8 +3,9 @@ import { Observable, Subject, takeUntil } from 'rxjs';
 import { WarframeApiService } from 'src/app/shared/services/warframe-api.service';
 
 @Component({
-  selector: 'app-hub',
-  templateUrl: './hub.component.html',
+    selector: 'app-hub',
+    templateUrl: './hub.component.html',
+    standalone: false
 })
 export class HubComponent implements OnDestroy {
   private _destroyed$ = new Subject<void>();

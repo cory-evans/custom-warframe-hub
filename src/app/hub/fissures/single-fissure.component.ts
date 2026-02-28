@@ -2,8 +2,9 @@ import { Component, Input, OnInit } from '@angular/core';
 import { SettingsService } from 'src/app/shared/services/settings.service';
 
 @Component({
-  selector: 'fissure-card',
-  templateUrl: './single-fissure.component.html',
+    selector: 'fissure-card',
+    templateUrl: './single-fissure.component.html',
+    standalone: false
 })
 export class SingleFissureComponent implements OnInit {
   @Input() fissure?: WarframeApi.Fissure;

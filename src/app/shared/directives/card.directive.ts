@@ -1,7 +1,8 @@
 import { Directive, ElementRef, Renderer2 } from '@angular/core';
 
 @Directive({
-  selector: '[appCard]',
+    selector: '[appCard]',
+    standalone: false
 })
 export class CardDirective {
   class = 'block bg-white p-4 rounded shadow';
