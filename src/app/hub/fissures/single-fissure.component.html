@@ -6,7 +6,12 @@
   }"
 >
   <div class="flex items-center">
-    <img [src]="url()" [alt]="fissure().tier" class="h-12 w-12" />
+    <img
+      [src]="url()"
+      [alt]="fissure().tier"
+      class="h-12 w-12"
+      [class.glitch-animate]="glitching()"
+    />
     <div class="pl-2 flex-1 overflow-hidden">
       <div class="flex justify-between space-x-4">
         <div class="whitespace-nowrap overflow-hidden">
