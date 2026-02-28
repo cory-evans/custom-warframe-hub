@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.0](https://github.com/cory-evans/custom-warframe-hub/compare/v1.2.3...v1.3.0) (2026-02-28)
+
+
+### Features
+
+* animate omnia fissure icon ([2d281f2](https://github.com/cory-evans/custom-warframe-hub/commit/2d281f27714fca1cb74531d8341a85a224e248d7))
+
+
+### Bug Fixes
+
+* display omnia fissure icon ([e794660](https://github.com/cory-evans/custom-warframe-hub/commit/e794660a451c2a3736a82b097aa500c69ed5e5d1))
+
 ## [1.2.3](https://github.com/cory-evans/custom-warframe-hub/compare/v1.2.2...v1.2.3) (2024-03-09)
 
 
