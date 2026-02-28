@@ -1,6 +1,6 @@
 import { Directive, HostBinding, Input } from '@angular/core';
 
-const common = 'border rounded transition-colors';
+const common = 'border rounded-sm transition-colors';
 const VARIANTS_INACTIVE: { [key: string]: string } = {
   primary: 'bg-blue-600 hover:bg-blue-800 text-white',
   'primary-outline':
